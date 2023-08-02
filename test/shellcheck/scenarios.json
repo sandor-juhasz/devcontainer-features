@@ -1,0 +1,16 @@
+{
+    "shellcheck_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:focal",
+        "features": {
+            "ghcr.io/devcontainers/features/common-utils:1": {
+                "installZsh": false,
+                "installOhMyZsh": false,
+                "upgradePackages": false,
+                "username": "octocat"
+            },
+            "shellcheck": {
+            }
+        },
+        "remoteUser": "octocat"
+    }
+}
