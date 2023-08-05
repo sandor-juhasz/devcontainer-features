@@ -1,20 +1,14 @@
 {
     "name": "Python base environment",
     "id": "python",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Installs Python runtimes with pyenv",
     "options": {
       "defaultPythonVersion": {
         "type": "string",
         "default": "3.11.4",
-        "description": "The Python runtime which gets installed in the default user's home environment. If the value is system, no runtime gets installed."
-      },
-      "installCPythonDependencies": {
-        "type": "boolean",
-        "default": "true",
-        "description": "Installs C Python dependencies which lets pyenv install a Python runtime in the user home directory. This can be set to false if defaultPythonVersion=system."
+        "description": "The Python runtime which gets installed in the default user's home environment. If the value is system, no runtime gets installed and pyenv is configured to use the system Python version."
       }
-
     },
     "customizations": {
         "vscode": {

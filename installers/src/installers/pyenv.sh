@@ -7,16 +7,13 @@
 #    USERNAME   The user for which pyenv is configured.
 ###############################################################################
 
+set -e
+
 source lib/common.sh
 
 export DEBIAN_FRONTEND=noninteractive
 
-if [[ "${INSTALL_CPYTHON_DEPENDENCIES}" == "true" ]]; then
-    apt_install build-essential libssl-dev zlib1g-dev \
-                libbz2-dev libreadline-dev libsqlite3-dev curl \
-                libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-                git curl ca-certificates --no-install-recommends
-fi
+apt_install git curl ca-certificates
 
 echo "Installing pyenv for $USERNAME..."
 

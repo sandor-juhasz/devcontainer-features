@@ -15,6 +15,6 @@ set -e
 source lib/common.sh
 
 export USERNAME="$(default_user)"
-export DEFAULT_PYTHON_VERSION=${DEFAULT_PYTHON_VERSION:-"3.11.3"}
+export DEFAULT_PYTHON_VERSION=${DEFAULT_PYTHON_VERSION:-"3.11.4"}
 
 ./features/python-base-environment.sh

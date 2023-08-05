@@ -21,6 +21,11 @@ if [[ "${PYTHON_VERSION}" == "system" ]]; then
 else
     echo "Installing Python $PYTHON_VERSION for $USERNAME..."
 
+    apt_install build-essential libssl-dev zlib1g-dev \
+                libbz2-dev libreadline-dev libsqlite3-dev curl \
+                libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
+                git curl ca-certificates --no-install-recommends
+
     as_user "pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION && pip install --upgrade pip"
     as_user "mkdir -p ~/.local/bin"
 fi

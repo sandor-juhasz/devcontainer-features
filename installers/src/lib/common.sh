@@ -65,6 +65,7 @@ function apt_check_packages_installed() {
 
 
 function apt_install() {
+    export DEBIAN_FRONTEND=noninteractive
     if ! apt_check_packages_installed "$@"; then
         apt_update_index_if_empty
         apt-get -y install --no-install-recommends "$@"
