@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+export DEFAULT_PYTHON_VERSION="${DEFAULTPYTHONVERSION:-"3.11.4"}"
+export INSTALL_CPYTHON_DEPENDENCIES="${INSTALLCPYTHONDEPENDENCIES:-"true"}"
+
+cd installers
+./install

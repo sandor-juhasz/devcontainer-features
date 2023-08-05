@@ -1,0 +1,17 @@
+{
+    "name": "Shell development tools",
+    "id": "shell",
+    "version": "1.0.1",
+    "description": "Installs shell script development tools.",
+    "customizations": {
+        "vscode": {
+          "extensions": [
+            "timonwong.shellcheck",
+            "rogalmic.bash-debug"
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
