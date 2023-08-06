@@ -11,16 +11,26 @@ set -e
 
 source lib/common.sh
 
-export DEBIAN_FRONTEND=noninteractive
+echo "Installing pyenv..."
+echo "==================="
 
-apt_install git curl ca-certificates
+if [[ "$USERNAME" == "root" ]]; then
+    user_home_dir="/root"
+else 
+    user_home_dir="/home/$USERNAME"
+fi
+echo "Using home directory: $user_home_dir"
 
-echo "Installing pyenv for $USERNAME..."
+if [ ! -d "$user_home_dir/.pyenv" ]; then 
+    echo "~/.pyenv directory was not found. Installing pyenv for $USERNAME..."
 
-as_user "rm -rf ~/.pyenv"
-as_user "cd /home/developer; echo $HOME; curl https://pyenv.run | bash"
+    export DEBIAN_FRONTEND=noninteractive
 
-cat <<'EOF' >"/home/$USERNAME/.bash_profile"
+    apt_install git curl ca-certificates
+
+    as_user "cd /home/developer; curl https://pyenv.run | bash"
+
+    cat <<'EOF' >"/home/$USERNAME/.bash_profile"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -32,3 +42,6 @@ eval "$(pyenv init -)"
 
 eval "$(pyenv virtualenv-init -)"
 EOF
+else
+    echo "Pyenv is already installed, skipping this step."
+fi

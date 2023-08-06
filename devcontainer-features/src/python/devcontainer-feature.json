@@ -1,7 +1,7 @@
 {
     "name": "Python base environment",
     "id": "python",
-    "version": "0.0.7",
+    "version": "0.0.9",
     "description": "Installs Python runtimes with pyenv",
     "options": {
       "defaultPythonVersion": {

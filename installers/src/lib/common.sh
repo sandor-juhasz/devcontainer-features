@@ -75,7 +75,7 @@ function apt_install() {
 function as_user() {
     local cmd="$*"
     if [ "$(id -u)" -eq 0 ] && [ "$USERNAME" != "root" ]; then
-        su - "$USERNAME" -c "$cmd"
+        su --login "$USERNAME" -c "$cmd"
     else
         "$cmd"
     fi
