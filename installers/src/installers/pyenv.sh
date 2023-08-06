@@ -31,6 +31,7 @@ if [ ! -d "$user_home_dir/.pyenv" ]; then
     as_user "curl https://pyenv.run | bash"
 
     install -T installers/files/pyenv.sh "$user_home_dir/.config/bashrc.d/pyenv.sh" --owner=$USERNAME --group=$USERNAME
+    install -T installers/files/pyenv.sh "$user_home_dir/.config/profile.d/pyenv.sh" --owner=$USERNAME --group=$USERNAME
     install -T installers/files/pyenv.sh "$user_home_dir/.config/zshrc.d/pyenv.sh" --owner=$USERNAME --group=$USERNAME
 else
     echo "Pyenv is already installed, skipping this step."

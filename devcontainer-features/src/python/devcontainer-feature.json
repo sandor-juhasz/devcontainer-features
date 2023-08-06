@@ -1,7 +1,7 @@
 {
     "name": "Python base environment",
     "id": "python",
-    "version": "0.0.11",
+    "version": "0.0.13",
     "description": "Installs Python runtimes with pyenv",
     "options": {
       "defaultPythonVersion": {
@@ -14,7 +14,8 @@
         "vscode": {
           "extensions": [
             "ms-python.python",
-            "bungcip.better-toml"
+            "bungcip.better-toml",
+            "ms-toolsai.jupyter"
           ]
         }
     },

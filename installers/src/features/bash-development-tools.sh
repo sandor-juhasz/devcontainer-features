@@ -8,16 +8,23 @@
 #
 # Environment:
 #    USERNAME                The user name of the user for which the feature is installed.
-#    DEFAULT_PYTHON_VERSION  The default python version to be installed for the user.
 #
 
-export DEFAULT_PYTHON_VERSION=${DEFAULT_PYTHON_VERSION:-"3.11.4"}
+export INSTALL_BASH_KERNEL=${INSTALL_BASH_KERNEL:-"true"}
 
 function install() {
+    # todo: install basic Python runtime if not installed.
+
     installers/shell-base.sh "${USERNAME}"
-    installers/pyenv.sh "${USERNAME}"
-    installers/python.sh "${USERNAME}" "${DEFAULT_PYTHON_VERSION}"
-    installers/pipx.sh "${USERNAME}"
+    installers/shellcheck.sh
+
+    if [[ "${INSTALL_BASH_KERNEL}" = "true" ]]; then
+        if [[ ! -d "/home/$USERNAME/.pyenv" ]]; then
+            export DEFAULT_PYTHON_VERSION="system"
+            features/python-base-environment.sh
+        fi
+        installers/bash_kernel.sh "${USERNAME}"
+    fi
 }
 
 install

@@ -10,12 +10,15 @@
 
 source lib/common.sh
 
+set -e
+
 USERNAME=${1:$(id -un)}         # install python for current user by default.
 PYTHON_VERSION=${2:-3.11.4}
 
 if [[ "${PYTHON_VERSION}" == "system" ]]; then
-    echo "Configuring System python as default..."
+    echo "Installing pip for System python..."
     apt_install python3-pip
+    echo "Configuring System python as default..."
     as_user "pyenv global system"
     as_user "mkdir -p ~/.local/bin"
 else

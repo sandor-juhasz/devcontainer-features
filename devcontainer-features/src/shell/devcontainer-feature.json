@@ -1,13 +1,21 @@
 {
     "name": "Shell development tools",
     "id": "shell",
-    "version": "1.0.1",
+    "version": "1.0.5",
     "description": "Installs shell script development tools.",
+    "options": {
+      "installBashKernel": {
+        "type": "boolean",
+        "default": "true",
+        "description": "Installs the Jupyer integration for Bash development."
+      }
+    },
     "customizations": {
         "vscode": {
           "extensions": [
             "timonwong.shellcheck",
-            "rogalmic.bash-debug"
+            "rogalmic.bash-debug",
+            "ms-toolsai.jupyter"
           ]
         }
     },
