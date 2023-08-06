@@ -12,6 +12,7 @@
 #
 
 function install() {
+    installers/shell-base.sh "${USERNAME}"
     installers/pyenv.sh "${USERNAME}"
     installers/python.sh "${USERNAME}" "${DEFAULT_PYTHON_VERSION}" "${INSTALL_CPYTHON_DEPENDENCIES}"
     installers/pipx.sh "${USERNAME}"

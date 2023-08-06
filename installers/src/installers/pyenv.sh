@@ -28,20 +28,10 @@ if [ ! -d "$user_home_dir/.pyenv" ]; then
 
     apt_install git curl ca-certificates
 
-    as_user "cd /home/developer; curl https://pyenv.run | bash"
+    as_user "curl https://pyenv.run | bash"
 
-    cat <<'EOF' >"/home/$USERNAME/.bash_profile"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# Restart your shell for the changes to take effect.
-
-# Load pyenv-virtualenv automatically by adding
-# the following to ~/.bashrc:
-
-eval "$(pyenv virtualenv-init -)"
-EOF
+    install -T installers/files/pyenv.sh "$user_home_dir/.config/bashrc.d/pyenv.sh" --owner=$USERNAME --group=$USERNAME
+    install -T installers/files/pyenv.sh "$user_home_dir/.config/zshrc.d/pyenv.sh" --owner=$USERNAME --group=$USERNAME
 else
     echo "Pyenv is already installed, skipping this step."
 fi
