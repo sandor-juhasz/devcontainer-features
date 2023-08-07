@@ -1,0 +1,23 @@
+{
+    "name": "Terraform tools",
+    "id": "terraform",
+    "version": "0.0.2",
+    "description": "Installs Terraform CLI and plugins needed for Terraform development.",
+    // "options": {
+    //   "defaultPythonVersion": {
+    //     "type": "string",
+    //     "default": "3.11.4",
+    //     "description": "The Python runtime which gets installed in the default user's home environment. If the value is system, no runtime gets installed and pyenv is configured to use the system Python version."
+    //   }
+    // },
+    "customizations": {
+        "vscode": {
+          "extensions": [
+            "hashicorp.terraform"
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
