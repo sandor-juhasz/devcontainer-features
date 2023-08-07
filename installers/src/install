@@ -15,5 +15,6 @@ set -e
 source lib/common.sh
 
 export USERNAME="$(default_user)"
+echo "Default user: $USERNAME"
 
 ./features/$1.sh
