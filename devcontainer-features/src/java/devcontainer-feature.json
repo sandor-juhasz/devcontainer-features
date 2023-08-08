@@ -1,0 +1,35 @@
+{
+    "name": "Java tools",
+    "id": "java",
+    "version": "0.0.4",
+    "description": "Installs SDKMan, JDK and optional tools.",
+    "options": {
+      "javaVersion": {
+        "type": "string",
+        "default": "",
+        "description": "Installs the specified Java version. Installs the latest Temurin LTS JDK by default. See `sdkman list java` for supported versions identifiers."
+      },
+      "installMaven": {
+        "type": "boolean",
+        "default": "true",
+        "description": "Installs the latest Maven."
+      },
+      "mavenVersion": {
+        "type": "string",
+        "default": "",
+        "description": "Installs the specified Maven version. Default: latest. See `sdkman list maven` for supported versions identifiers."
+      }
+
+    },
+    "customizations": {
+        "vscode": {
+          "extensions": [
+            "vscjava.vscode-java-pack",
+            "SonarSource.sonarlint-vscode"
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

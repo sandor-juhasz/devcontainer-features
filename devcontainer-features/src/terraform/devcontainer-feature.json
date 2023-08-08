@@ -1,7 +1,7 @@
 {
     "name": "Terraform tools",
     "id": "terraform",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Installs Terraform CLI and plugins needed for Terraform development.",
     // "options": {
     //   "defaultPythonVersion": {
