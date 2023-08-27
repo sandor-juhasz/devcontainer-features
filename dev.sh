@@ -11,6 +11,14 @@ function run_base_container() {
         bash
 }
 
+function run_ubuntu() {
+    docker run -it --rm \
+        --mount "type=bind,source=.,target=/mnt" \
+        --workdir "/mnt/installers/src" \
+        ubuntu:latest \
+        bash
+}
+
 function publish_features() {
     mkdir -p build
     rm -rf build/*

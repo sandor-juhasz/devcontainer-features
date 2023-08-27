@@ -13,7 +13,8 @@ fi
 
 mkdir -p ~/.config/bashrc.d \
          ~/.config/profile.d \
-         ~/.config/zshrc.d
+         ~/.config/zshrc.d \
+         ~/.local/bin
 
 if [[ ! -e ~/.bashrc ]] || ! grep -q '>>> ~/.config/bashrc.d support >>>' ~/.bashrc ; then 
     echo "Updating ~/.bashrc"

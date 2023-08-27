@@ -1,0 +1,48 @@
+{
+    "name": "Kubernetes development tools",
+    "id": "kubernetes",
+    "version": "0.0.1",
+    "description": "Installs local Kubernetes development tools.",
+    "options": {
+      // "installK3s": {
+      //   "type": "boolean",
+      //   "default": "false",
+      //   "description": "Installs K3s."
+      // },
+      // "installMinikube": {
+      //   "type": "boolean",
+      //   "default": "false",
+      //   "description": "Installs Minikube."
+      // }, 
+      // "installK3d": {
+      //   "type": "boolean",
+      //   "default": "false",
+      //   "description": "Installs K3d."
+      // },
+      "installKubectl": {
+        "type": "boolean",
+        "default": "true",
+        "description": "Installs kubectl."
+      },
+      "installKubectx": {
+        "type": "boolean",
+        "default": "true",
+        "description": "Installs kubectx and kubens."
+      },
+      "installHelm": {
+        "type": "boolean",
+        "default": "true",
+        "description": "Installs Helm."
+      }
+    },
+    "customizations": {
+        "vscode": {
+          "extensions": [
+            "ms-kubernetes-tools.vscode-kubernetes-tools"
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

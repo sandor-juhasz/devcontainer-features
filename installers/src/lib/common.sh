@@ -15,6 +15,44 @@
 ###############################################################################
 
 #
+# Installs basic tools which are needed to install any APT package.
+#
+function apt_install_prerequisites() {
+    apt_install apt-transport-https ca-certificates curl gpg
+}
+
+#
+# Adds a new APT source.
+#
+# Example usage:
+#
+#  apt_install_prerequisites
+#  apt_add_source kubernetes \
+#      "https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key" \
+#      "https://pkgs.k8s.io/core:/stable:/v1.28/deb/" \
+#      "/"
+#
+function apt_add_source() {
+    local source_name="$1"
+    local key_url="$2"
+    local repo_url="$3"
+    local rest="$4"
+
+    local keyring_file="/etc/apt/keyrings/${source_name}.gpg"
+    local apt_source_file="/etc/apt/sources.list.d/${source_name}.list"
+
+    mkdir -p /etc/apt/keyrings
+    if [[ -e "${keyring_file}" ]]; then
+        rm "${keyring_file}"
+    fi
+
+    curl -fsSL "${key_url}" | gpg --dearmor -o "${keyring_file}"
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=${keyring_file}] ${repo_url} ${rest}" | tee "${apt_source_file}"    
+
+    apt-get update
+}
+
+#
 # Configures APT to be non-interactive for the rest of the script.
 #
 function apt_set_noninteractive() {
