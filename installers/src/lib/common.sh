@@ -27,16 +27,45 @@ function apt_install_prerequisites() {
 # Example usage:
 #
 #  apt_install_prerequisites
-#  apt_add_source kubernetes \
-#      "https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key" \
-#      "https://pkgs.k8s.io/core:/stable:/v1.28/deb/" \
-#      "/"
+#  apt_add_source -n kubernetes \
+#     -d -k "https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key" \
+#     -r "https://pkgs.k8s.io/core:/stable:/v1.28/deb/" \
+#     -- "/"
 #
 function apt_add_source() {
-    local source_name="$1"
-    local key_url="$2"
-    local repo_url="$3"
-    local rest="$4"
+    local OPTIND o source_name key_url repo_url rest dearmor
+    dearmor=false
+    while getopts ":n:k:r:d" o; do
+        case "${o}" in
+            n)
+                source_name="${OPTARG}"
+                ;;
+            k)
+                key_url="${OPTARG}"
+                ;;
+            r)
+                repo_url="${OPTARG}"
+                ;;        
+            d)
+                dearmor=true
+                ;;                    
+            *)
+                foo_usage
+                ;;
+        esac
+    done
+    shift $((OPTIND-1))
+    local rest="$*"
+
+    cat <<EOF
+Adding new APT source
+=====================
+Source name: $source_name
+Key URL: $key_url
+Repository URL: $repo_url
+Dearmor: $dearmor
+Rest: $rest
+EOF
 
     local keyring_file="/etc/apt/keyrings/${source_name}.gpg"
     local apt_source_file="/etc/apt/sources.list.d/${source_name}.list"
@@ -46,7 +75,13 @@ function apt_add_source() {
         rm "${keyring_file}"
     fi
 
-    curl -fsSL "${key_url}" | gpg --dearmor -o "${keyring_file}"
+    if [[ "$dearmor" == "true" ]]; then
+        echo "Downloading and dearmoring GPG key..."
+        curl -fsSL "${key_url}" | gpg --dearmor -o "${keyring_file}"
+    else
+        echo "Downloading GPG key without dearmoring..."
+        curl -fsSL "${key_url}" | dd of="${keyring_file}"
+    fi
     echo "deb [arch=$(dpkg --print-architecture) signed-by=${keyring_file}] ${repo_url} ${rest}" | tee "${apt_source_file}"    
 
     apt-get update

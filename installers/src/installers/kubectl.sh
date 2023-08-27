@@ -18,10 +18,10 @@ echo "Installing Kubectl..."
 
 apt_install_prerequisites
 
-apt_add_source kubernetes \
-    "https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key" \
-    "https://pkgs.k8s.io/core:/stable:/v1.28/deb/" \
-    "/"
+apt_add_source -n kubernetes \
+    -d -k "https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key" \
+    -r "https://pkgs.k8s.io/core:/stable:/v1.28/deb/" \
+    -- "/"
 
 apt_install bash-completion kubectl
 
