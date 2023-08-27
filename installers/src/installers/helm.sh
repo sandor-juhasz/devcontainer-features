@@ -20,3 +20,11 @@ apt_add_source helm \
     "all main"
 
 apt_install helm
+
+su --login "$USERNAME" <<'EOF'
+    echo "Setting up autocomplete for $USER"
+    mkdir -p ~/.config/bashrc.d
+    mkdir -p ~/.config/zshrc.d
+    echo "source <(helm completion bash)" >~/.config/bashrc.d/helm_completion.sh
+    echo "source <(helm completion zsh)" >~/.config/zshrc.d/helm_completion.sh
+EOF

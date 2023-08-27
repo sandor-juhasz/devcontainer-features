@@ -13,4 +13,6 @@ USERNAME=${1:$(id -un)}         # install python for current user by default.
 
 echo "Initializing shell base files for user $USERNAME..."
 
+apt_install bash-completion
+
 as_user "cd $PWD; ./installers/scripts/init-shell-base.sh"

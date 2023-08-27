@@ -10,6 +10,7 @@
 set -e
 
 USERNAME=${1:-$(id -un)}
+echo User: $USERNAME
 
 source lib/common.sh
 
@@ -22,6 +23,12 @@ apt_add_source kubernetes \
     "https://pkgs.k8s.io/core:/stable:/v1.28/deb/" \
     "/"
 
-apt_install kubectl
+apt_install bash-completion kubectl
 
-# TODO: Add shell completion.
+su --login "$USERNAME" <<'EOF'
+    echo "Setting up autocomplete for $USER"
+    mkdir -p ~/.config/bashrc.d
+    mkdir -p ~/.config/zshrc.d
+    echo "source <(kubectl completion bash)" >~/.config/bashrc.d/kubectl_completion.sh
+    echo "source <(kubectl completion zsh)" >~/.config/zshrc.d/kubectl_completion.sh
+EOF
