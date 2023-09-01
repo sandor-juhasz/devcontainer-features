@@ -1,0 +1,4 @@
+[submodule "installers"]
+	path = installers
+	url = https://github.com/sandor-juhasz/installers.git
+	branch = main
