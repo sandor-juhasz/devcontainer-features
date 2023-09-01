@@ -1,0 +1,18 @@
+{
+  "name": "Go development environment",
+  "id": "go",
+  "version": "0.0.2",
+  "description": "Installs the latest Go language runtime.",
+  "options": {
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go"
+      ]
+    }
+  },
+  "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

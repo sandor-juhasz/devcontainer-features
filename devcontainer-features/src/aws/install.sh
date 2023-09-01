@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-#export DEFAULT_PYTHON_VERSION="${DEFAULTPYTHONVERSION:-"3.11.4"}"
+export INSTALL_AWS_CDK="${INSTALLAWSCDK:-"false"}"
+export INSTALL_AWS_SAM_CLI="${INSTALLAWSSAMCLI:-"false"}"
 
 cd installers
 ./install aws-development-tools

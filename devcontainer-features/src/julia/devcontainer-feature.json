@@ -1,0 +1,18 @@
+{
+  "name": "Julia development environment",
+  "id": "julia",
+  "version": "0.0.2",
+  "description": "Installs the latest Julia language runtime.",
+  "options": {
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "julialang.language-julia"
+      ]
+    }
+  },
+  "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
