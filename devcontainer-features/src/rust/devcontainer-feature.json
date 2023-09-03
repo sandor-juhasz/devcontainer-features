@@ -1,14 +1,15 @@
 {
   "name": "Rust development environment",
   "id": "rust",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Installs the latest Rust language runtime.",
   "options": {
   },
   "customizations": {
     "vscode": {
       "extensions": [
-        "rust-lang.rust-analyzer"
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb"
       ]
     }
   },
