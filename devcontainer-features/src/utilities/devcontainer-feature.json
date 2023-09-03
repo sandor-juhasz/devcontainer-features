@@ -1,0 +1,17 @@
+{
+    "name": "Various utilities for everyday work",
+    "id": "utilities",
+    "version": "0.0.1",
+    "description": "Preinstalls various Linux utilities that I use in dotfiles to improve startup time of devcontainers.",
+    "options": {
+    },
+    "customizations": {
+        "vscode": {
+          "extensions": [
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
