@@ -13,15 +13,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: "Publish Features"
-        uses: devcontainers/action@v1
-        with:
-          publish-features: "true"
-          base-path-to-features: "./src"
-          generate-docs: "true"
+      - name: "Verify installers:"
+        run: ls -l installers
+        
+      - name: "Copy scripts to /build"
+        run: |
+            mkdir -p build
+            rm -rf build/*
+            cp -r devcontainer-features build
+            for feature_dir in build/devcontainer-features/src/*; do
+               mkdir -p "$feature_dir/installers"
+               cp -r installers/src/* "$feature_dir/installers"
+            done;
+
+      # - name: "Publish Features"
+      #   uses: devcontainers/action@v1
+      #   with:
+      #     publish-features: "true"
+      #     base-path-to-features: "./build"
+      #     generate-docs: "true"
           
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Create PR for Documentation
       #   id: push_image_info
