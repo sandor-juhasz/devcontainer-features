@@ -6,17 +6,17 @@
     "options": {
       "installKubectl": {
         "type": "boolean",
-        "default": "true",
+        "default": true,
         "description": "Installs kubectl."
       },
       "installKubectx": {
         "type": "boolean",
-        "default": "true",
+        "default": true,
         "description": "Installs kubectx and kubens."
       },
       "installHelm": {
         "type": "boolean",
-        "default": "true",
+        "default": true,
         "description": "Installs Helm."
       }
     },

@@ -6,7 +6,7 @@
     "options": {
       "installBashKernel": {
         "type": "boolean",
-        "default": "true",
+        "default": true,
         "description": "Installs the Jupyer integration for Bash development."
       }
     },

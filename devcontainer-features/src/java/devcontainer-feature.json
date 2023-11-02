@@ -11,7 +11,7 @@
       },
       "installMaven": {
         "type": "boolean",
-        "default": "true",
+        "default": true,
         "description": "Installs the latest Maven."
       },
       "mavenVersion": {
