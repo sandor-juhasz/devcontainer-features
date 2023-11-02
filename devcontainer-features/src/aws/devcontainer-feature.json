@@ -6,12 +6,12 @@
     "options": {
       "installAWSCDK": {
         "type": "boolean",
-        "default": "false",
+        "default": false,
         "description": "Install the AWS CDK"
       },
       "installAWSSAMCLI": {
         "type": "boolean",
-        "default": "false",
+        "default": false,
         "description": "Install the AWS SAM CLI"
       }
     },
