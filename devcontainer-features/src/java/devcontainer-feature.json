@@ -18,14 +18,20 @@
         "type": "string",
         "default": "",
         "description": "Installs the specified Maven version. Default: latest. See `sdkman list maven` for supported versions identifiers."
+      },
+      "installIJavaKernel": {
+        "type": "boolean",
+        "default": false,
+        "description": "Installs the IJava Jupyter kernel and its dependencies"
       }
-
     },
     "customizations": {
         "vscode": {
           "extensions": [
             "vscjava.vscode-java-pack",
-            "SonarSource.sonarlint-vscode"
+            "SonarSource.sonarlint-vscode",
+            "ms-toolsai.jupyter",
+            "ms-python.python"
           ]
         }
     },
