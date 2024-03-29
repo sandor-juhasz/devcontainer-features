@@ -1,0 +1,54 @@
+{
+    "name": "Oracle Database development environment",
+    "id": "oracle",
+    "version": "0.0.3",
+    "description": "Installs various Oracle Database development tools",
+    "options": {
+        "installInstantClient": {
+            "type": "boolean",
+            "default": true,
+            "description": "Installs Oracle InstantClient"
+        },
+        "instantClientType": {
+            "type": "string",
+            "default": "basic-light",
+            "description": "Selects the Oracle Instant Client type. Values: 'basic', 'basic-light'"
+        },
+        "installSQLPlus": {
+            "type": "boolean",
+            "default": true,
+            "description": "Installs SQL*Plus"
+        },
+        "installInstantClientTools": {
+            "type": "boolean",
+            "default": true,
+            "description": "Installs Instant Client Tools"
+        },
+        "installInstantClientSDK": {
+            "type": "boolean",
+            "default": false,
+            "description": "Installs Instant Client SDK"
+        },
+        "installInstantClientJDBC": {
+            "type": "boolean",
+            "default": false,
+            "description": "Installs Instant Client JDBC Extension"
+        },
+        "installInstantClientODBC": {
+            "type": "boolean",
+            "default": false,
+            "description": "Installs Instant Client ODBC Extension"
+        }        
+    },
+    "customizations": {
+        "vscode": {
+          "extensions": [
+            "Oracle.oracledevtools",
+            "Oracle.sql-developer"
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
