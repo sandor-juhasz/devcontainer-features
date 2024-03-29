@@ -1,7 +1,7 @@
 {
     "name": "Oracle Database development environment",
     "id": "oracle",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "description": "Installs various Oracle Database development tools",
     "options": {
         "installInstantClient": {
@@ -38,6 +38,11 @@
             "type": "boolean",
             "default": false,
             "description": "Installs Instant Client ODBC Extension"
+        },
+        "installSQLcl": {
+            "type": "boolean",
+            "default": false,
+            "description": "Installs the latest version of Oracle SQLcl and the default JDK"
         }        
     },
     "customizations": {
