@@ -1,0 +1,22 @@
+{
+    "name": "PostgreSQL Database development environment",
+    "id": "postgresql",
+    "version": "0.0.1",
+    "description": "Installs various PostgreSQL database development tools",
+    "options": {
+        "installPsql": {
+            "type": "boolean",
+            "default": true,
+            "description": "Installs the psql client"
+        }
+    },
+    "customizations": {
+        "vscode": {
+          "extensions": [
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
