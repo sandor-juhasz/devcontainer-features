@@ -1,7 +1,7 @@
 {
     "name": "Java tools",
     "id": "java",
-    "version": "0.0.5",
+    "version": "0.0.7",
     "description": "Installs SDKMan, JDK and optional tools.",
     "options": {
       "javaVersion": {
@@ -13,6 +13,11 @@
         "type": "boolean",
         "default": true,
         "description": "Installs the latest Maven."
+      },
+      "installJMeter": {
+        "type": "boolean",
+        "default": false,
+        "description": "Installs the latest Apache jMeter"
       },
       "mavenVersion": {
         "type": "string",
