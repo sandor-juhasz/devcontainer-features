@@ -1,0 +1,27 @@
+{
+    "name": "Snowflake development tools",
+    "id": "snowflake",
+    "version": "1.0.1",
+    "description": "Installs Snowflake development tools.",
+    "options": {
+      "installSnowSQL": {
+        "type": "boolean",
+        "default": true,
+        "description": "Installs the SnowSQL CLI."
+      },
+      "snowSQLVersion": {
+        "type": "string",
+        "default": "1.3.1",
+        "description": "SnowSQL version"
+      }
+    },
+    "customizations": {
+        "vscode": {
+          "extensions": [
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
