@@ -1,0 +1,27 @@
+{
+    "name": "dbt development tools",
+    "id": "dbt",
+    "version": "1.0.1",
+    "description": "Installs DBT development tools.",
+    "options": {
+      "installDbtCore": {
+        "type": "boolean",
+        "default": true,
+        "description": "Installs dbt core CLI."
+      },
+      "dbtCorePlugins": {
+        "type": "string",
+        "default": "",
+        "description": "Space separated list of DBT plugins like dbt-snowflake"
+      },      
+    },
+    "customizations": {
+        "vscode": {
+          "extensions": [
+          ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
