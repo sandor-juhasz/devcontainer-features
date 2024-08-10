@@ -1,7 +1,7 @@
 {
     "name": "Snowflake development tools",
     "id": "snowflake",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Installs Snowflake development tools.",
     "options": {
       "installSnowSQL": {
@@ -20,16 +20,6 @@
         "description": "Installs the Snowflake CLI."
       }      
     },
-
-    /*
-     * Setting up a fixed port number for browser based authentication for
-     * corporate SAML SSO.
-     *
-     * Note: The snowsql uses a random port and localhost as the hostname
-     *       to perform the browser-based authentication. As this port needs to
-     *       be forwarded, it was fixed to be 53154, a random port number.
-     *       If you run into port collissions, you may need to update it.
-     */
     "forwardPorts": [53154, 53154],   
     "containerEnv": {
         "SF_AUTH_SOCKET_PORT": "53154",
