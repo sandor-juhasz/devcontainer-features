@@ -9,3 +9,6 @@
   The easiest way to solve this was to fix the port number to a random
   5-digit port number.
 
+  Warning: the port needs to be forwarded in the devcontainer.json which
+           uses the feature.
+

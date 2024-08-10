@@ -20,7 +20,6 @@
         "description": "Installs the Snowflake CLI."
       }      
     },
-    "forwardPorts": [53154, 53154],   
     "containerEnv": {
         "SF_AUTH_SOCKET_PORT": "53154",
         "SF_AUTH_SOCKET_REUSEPORT": "true"
