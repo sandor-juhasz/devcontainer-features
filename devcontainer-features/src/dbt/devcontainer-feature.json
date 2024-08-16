@@ -1,7 +1,7 @@
 {
     "name": "dbt development tools",
     "id": "dbt",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Installs DBT development tools.",
     "options": {
       "installDbtCore": {
