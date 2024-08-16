@@ -1,7 +1,7 @@
 {
     "name": "dbt development tools",
     "id": "dbt",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Installs DBT development tools.",
     "options": {
       "installDbtCore": {
@@ -13,6 +13,21 @@
         "type": "string",
         "default": "",
         "description": "Space separated list of DBT plugins like dbt-snowflake"
+      },
+      "installDbtCloudCLI": {
+        "type": "string",
+        "default": "false",
+        "description": "Installs the DBT Cloud CLI"
+      },
+      "dbtCloudCLIVersion": {
+        "type": "string",
+        "default": "0.38.10",
+        "description": "The version number of the DBT Cloud CLI. Default: 0.38.10"
+      },
+      "dbtCloudCLIAlias": {
+        "type": "string",
+        "default": "dbt",
+        "description": "The name of the DBT Cloud CLI executable. Defualt: dbt"
       }      
     },
     "customizations": {
