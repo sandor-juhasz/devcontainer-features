@@ -19,7 +19,7 @@ function run_ubuntu() {
         bash
 }
 
-function publish_features() {
+function build() {
     mkdir -p build
     rm -rf build/*
     cp -r devcontainer-features build
@@ -27,7 +27,10 @@ function publish_features() {
         mkdir -p "$feature_dir/installers"
         cp -r installers/src/* "$feature_dir/installers"
     done;
+}
 
+function publish_features() {
+    build
     pushd build/devcontainer-features/src
     devcontainer features publish --namespace sandor-juhasz/devcontainer-features .
     popd

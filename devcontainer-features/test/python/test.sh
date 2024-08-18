@@ -28,7 +28,7 @@
 #               --remote-user root \
 #               --skip-scenarios   \
 #               --base-image mcr.microsoft.com/devcontainers/base:ubuntu \
-#               /path/to/this/repo
+#               --project-folder /path/to/this/repo
 
 set -e
 

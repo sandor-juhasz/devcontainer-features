@@ -1,6 +1,6 @@
 {
     "shellcheck_test": {
-        "image": "mcr.microsoft.com/devcontainers/base:focal",
+        "image": "mcr.microsoft.com/devcontainers/base:jammy",
         "features": {
             "ghcr.io/devcontainers/features/common-utils:1": {
                 "installZsh": false,
@@ -9,7 +9,7 @@
                 "username": "octocat"
             },
             "shell": {
-                "installShellcheck": "false"
+                "installShellcheck": "true"
             }
         },
         "remoteUser": "octocat"

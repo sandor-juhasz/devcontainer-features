@@ -1,0 +1,13 @@
+{
+    "snowsql_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:jammy",
+        "features": {
+            "snowflake": {
+                "installSnowSQL": "true",
+                "snowSQLVersion": "1.3.0",
+                "installSnowflakeCLI": "false"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}
