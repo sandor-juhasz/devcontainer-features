@@ -40,3 +40,7 @@ The feature has been tested with the following base images:
   The plugin does not integrate well with other VSCode features unless dbt 
   core is installed into the user's Python environment. While pipx would be
   preferred, the default is user-python.
+
+  Sometimes the plugin is not started when VSCode starts. Restarting VSCode
+  or the devcontainer usually solves the issue. Further usage reports are needed
+  to assess how severe this issue is.
