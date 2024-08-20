@@ -1,13 +1,18 @@
 {
     "name": "dbt development tools",
     "id": "dbt",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "Installs DBT development tools.",
     "options": {
       "installDbtCore": {
         "type": "boolean",
         "default": true,
         "description": "Installs dbt core CLI."
+      },
+      "dbtCoreInstallMethod": {
+        "type": "string",
+        "default": "user-python",
+        "description": "Selects method to install dbt. Values: user-python, pyenv-virtualenv, pipx"
       },
       "dbtCorePlugins": {
         "type": "string",
