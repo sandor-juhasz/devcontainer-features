@@ -1,7 +1,7 @@
 {
     "name": "Snowflake development tools",
     "id": "snowflake",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Installs Snowflake development tools.",
     "options": {
       "installSnowSQL": {
@@ -11,7 +11,7 @@
       },
       "snowSQLVersion": {
         "type": "string",
-        "default": "1.3.1",
+        "default": "1.4.5",
         "description": "SnowSQL version"
       },
       "installSnowflakeCLI": {
