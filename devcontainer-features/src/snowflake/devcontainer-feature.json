@@ -1,7 +1,7 @@
 {
     "name": "Snowflake development tools",
     "id": "snowflake",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Installs Snowflake development tools.",
     "options": {
       "installSnowSQL": {
@@ -18,7 +18,12 @@
         "type": "boolean",
         "default": true,
         "description": "Installs the Snowflake CLI."
-      }      
+      },
+      "snowflakeCLIVersion": {
+        "type": "string",
+        "default": "3.14.0",
+        "description": "Snowflake CLI version. The deb package is installed when the version number is used. The pipx value installs the latest version using pipx."
+      }
     },
     "containerEnv": {
         "SF_AUTH_SOCKET_PORT": "53154",

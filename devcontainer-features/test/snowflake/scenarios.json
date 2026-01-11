@@ -9,5 +9,29 @@
             }
         },
         "remoteUser": "vscode"
+    },
+    "snowcli_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:jammy",
+        "features": {
+            "snowflake": {
+                "installSnowSQL": "false",
+                "installSnowflakeCLI": "true",
+                "snowflakeCLIVersion": "3.13.1"
+            }
+        },
+        "remoteUser": "vscode"
+    },
+    "snowcli_pipx": {
+        "image": "mcr.microsoft.com/devcontainers/base:jammy",
+        "features": {
+            "snowflake": {
+                "installSnowSQL": "false",
+                "installSnowflakeCLI": "true",
+                "snowflakeCLIVersion": "pipx"
+            }
+        },
+        "remoteUser": "vscode"
     }
+    
+
 }
